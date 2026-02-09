@@ -1,13 +1,23 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Waras Infotech — Intelligent Automation for Modern Businesses</title>
+
     <meta name="description"
-        content="Waras Infotech provides web development, design, marketing, and automation solutions to help modern businesses scale." />
-    <link rel="icon" type="image/png" href="waras logo-01.png">
+        content="Waras Infotech provides web development, design, marketing, AI automation, and cyber security solutions to help modern businesses scale." />
+
+    <!-- Open Graph (WhatsApp/Facebook Preview) -->
+    <meta property="og:title" content="Waras Infotech — Intelligent Automation for Modern Businesses" />
+    <meta property="og:description"
+        content="Web development, design, marketing & AI automation to help your business scale." />
+    <meta property="og:image" content="waras logo-01.png" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" href="waras logo-01.png" />
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -62,7 +72,6 @@
             pointer-events: none;
         }
 
-        /* Nice focus outline */
         :focus-visible {
             outline: 2px solid rgba(168, 85, 247, .55);
             outline-offset: 3px;
@@ -70,7 +79,7 @@
     </style>
 </head>
 
-<body class="bg-bg text-white antialiased overflow-x-hidden">
+<body class="bg-bg text-white antialiased overflow-x-hidden overflow-x-clip">
     <div class="relative min-h-screen stars grain">
         <!-- Glow blobs -->
         <div
@@ -83,25 +92,22 @@
             class="pointer-events-none absolute top-[820px] -right-52 h-[560px] w-[560px] rounded-full bg-pink/15 blur-[130px]">
         </div>
 
-
         <!-- Navbar -->
-        <header class="sticky top-0 z-40 border-b border-white/10 bg-bg/60 backdrop-blur ">
+        <header class="sticky top-0 z-40 border-b border-white/10 bg-bg/60 backdrop-blur">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 <a href="#home" class="flex items-center gap-2">
-
                     <div
                         class="h-9 w-9 overflow-hidden rounded-xl bg-white/10 ring-1 ring-white/10 grid place-items-center">
-                        <img src="waras logo-01.png" alt="Waras Infotech Logo"
-                            class="h-full w-full object-cover">
+                        <img src="waras logo-01.png" alt="Waras Infotech Logo" width="36" height="36"
+                            class="h-full w-full object-cover" decoding="async" />
                     </div>
-
                     <div class="leading-tight">
                         <div class="font-semibold">Waras Infotech</div>
                         <div class="text-xs text-white/60">IT • Design • Marketing • Automation</div>
                     </div>
                 </a>
 
-                <nav class="hidden items-center gap-6 text-sm text-white/80 md:flex ">
+                <nav class="hidden items-center gap-6 text-sm text-white/80 md:flex">
                     <a class="hover:text-white" href="#home">Home</a>
                     <a class="hover:text-white" href="#services">Services</a>
                     <a class="hover:text-white" href="#benefits">Benefits</a>
@@ -112,8 +118,7 @@
                     </a>
                 </nav>
 
-
-                <button id="menuBtn"
+                <button id="menuBtn" aria-label="Open menu"
                     class="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2 text-white/80 md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -121,17 +126,16 @@
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-
             </div>
 
             <!-- Mobile menu -->
-            <div id="mobileMenu" class="hidden border-t border-white/10 bg-bg/80 px-4 py-4 backdrop-blur md:hidden ">
+            <div id="mobileMenu" class="hidden border-t border-white/10 bg-bg/80 px-4 py-4 backdrop-blur md:hidden">
                 <div class="mx-auto flex max-w-7xl flex-col gap-2 text-sm text-white/80">
                     <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#home">Home</a>
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#about">About</a>
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#blog">Blog</a>
+                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#services">Services</a>
+                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#benefits">Benefits</a>
                     <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
-                    <a class="mt-2 rounded-xl bg-blue-400 px-4 py-3 text-center font-medium text-white shadow-glow"
+                    <a class="mt-2 rounded-xl bg-purple px-4 py-3 text-center font-medium text-white shadow-glow hover:opacity-90"
                         href="#contact">
                         Book a call
                     </a>
@@ -141,7 +145,7 @@
 
         <main id="home" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <!-- HERO -->
-            <section class="py-16 sm:py-20 lg:py-24 ">
+            <section class="py-16 sm:py-20 lg:py-24">
                 <div class="mx-auto max-w-4xl text-center">
                     <div
                         class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
@@ -157,8 +161,9 @@
 
                     <p class="mt-4 text-base text-muted sm:text-lg">
                         Waras Infotech delivers premium graphic design, video editing, UI/UX, web & app development, AI
-                        automation, social media management, cyber security, and complete IT solutions—built to help you
-                        grow faster.
+                        automation,
+                        social media management, cyber security, and complete IT solutions—built to help you grow
+                        faster.
                     </p>
 
                     <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -174,39 +179,47 @@
                 </div>
 
                 <!-- Trust logos row -->
-                <div class="mt-14 ">
-                    <p class="text-center text-xs text-faint ">Over 10+ businesses trust us</p>
+                <div class="mt-14">
+                    <p class="text-center text-xs text-faint">Over 10+ businesses trust us</p>
                     <div class="mt-6 grid grid-cols-2 gap-4 opacity-70 sm:grid-cols-3 lg:grid-cols-6 justify-center">
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm">
-                            <img src="gurumantra.png" alt="">
+                        <!-- Tip: set width/height to reduce layout shift -->
+                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
+                            <img src="gurumantra.png" alt="Gurumantra" width="140" height="40"
+                                class="h-10 w-auto object-contain" loading="lazy" decoding="async" />
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm">
-                            <img src="columbia.png" alt="">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
+                            <img src="columbia.png" alt="Columbia" width="140" height="40"
+                                class="h-10 w-auto object-contain" loading="lazy" decoding="async" />
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-3 pt-6 pb-2 text-center text-sm">
-                            <img src="no bg logo.png" alt="">
+                        <div
+                            class="rounded-2xl border border-white/10 bg-white/5 px-3 pt-6 pb-2 grid place-items-center">
+                            <img src="no bg logo.png" alt="Partner Logo" width="140" height="40"
+                                class="h-10 w-auto object-contain" loading="lazy" decoding="async" />
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm">
-                            <img src="Logo_of_CPN_(UML).png" alt="">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
+                            <img src="Logo_of_CPN_(UML).png" alt="CPN (UML)" width="140" height="40"
+                                class="h-10 w-auto object-contain" loading="lazy" decoding="async" />
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
                             <img src="473007210_1055367109936805_7848429304972359604_n-removebg-preview.png"
-                                alt="">
+                                alt="Partner Logo" width="140" height="40" class="h-10 w-auto object-contain"
+                                loading="lazy" decoding="async" />
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm">
-                            <img src="uddan.png" alt="">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
+                            <img src="uddan.png" alt="Uddan" width="140" height="40" class="h-10 w-auto object-contain"
+                                loading="lazy" decoding="async" />
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            <!-- SERVICES / FEATURES (like screenshot blocks) -->
-            <section id="services" class="py-14 sm:py-16 ">
+            <!-- SERVICES / FEATURE ROWS -->
+            <section id="services" class="py-14 sm:py-16">
                 <div class="text-center">
                     <div
                         class="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-                        Our Services</div>
+                        Our Services
+                    </div>
                     <h2 class="mt-4 text-3xl font-bold sm:text-5xl text-ink">
                         Solutions That Take Your<br class="hidden sm:block" /> Business to the Next Level
                     </h2>
@@ -217,7 +230,6 @@
 
                 <!-- Feature Row 1 -->
                 <div class="mt-12 grid gap-8 lg:grid-cols-2">
-                    <!-- left mock card -->
                     <div class="rounded-3xl border border-white/10 bg-panel p-6 shadow-soft">
                         <div class="rounded-2xl border border-white/10 bg-panel2 p-5">
                             <div class="flex items-center justify-between">
@@ -241,7 +253,6 @@
                         </div>
                     </div>
 
-                    <!-- right copy -->
                     <div class="flex flex-col justify-center">
                         <div
                             class="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
@@ -250,7 +261,8 @@
                         <h3 class="mt-4 text-3xl font-bold text-ink">Automate repetitive tasks</h3>
                         <p class="mt-3 text-muted">
                             We build smart automation systems for lead handling, reporting, reminders, content
-                            workflows, and internal operations—saving time and reducing errors.
+                            workflows, and internal operations—
+                            saving time and reducing errors.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2">
                             <span
@@ -258,10 +270,11 @@
                                 Automation</span>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80">Reporting</span>
-                            <span class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80">
-                                Workflow Bots</span>
-                            <span class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80">
-                                Integrations</span>
+                            <span
+                                class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80">Workflow
+                                Bots</span>
+                            <span
+                                class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80">Integrations</span>
                         </div>
                     </div>
                 </div>
@@ -342,10 +355,10 @@
                     </div>
                 </div>
             </section>
-            <!-- SERVICES -->
-            <section id="services" class="py-14 sm:py-16">
-                <div class="text-center">
 
+            <!-- ALL SERVICES (renamed id to avoid duplicate) -->
+            <section id="all-services" class="py-14 sm:py-16">
+                <div class="text-center">
                     <h2 class="text-3xl font-bold sm:text-5xl text-white/90">
                         Powerful Digital & IT Solutions<br class="hidden sm:block" />
                         Under One Roof
@@ -362,10 +375,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Graphic Design</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Branding and creatives that make your business look premium and consistent
-                                    everywhere.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Branding and creatives that make your business
+                                    look premium and consistent everywhere.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Design</span>
@@ -382,9 +393,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Video Editing</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Scroll-stopping edits for Reels, ads, and YouTube—clean, modern, engaging.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Scroll-stopping edits for Reels, ads, and
+                                    YouTube—clean, modern, engaging.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Video</span>
@@ -401,9 +411,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">UI/UX Design</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    User-centric interfaces designed for usability, clarity, and conversions.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">User-centric interfaces designed for usability,
+                                    clarity, and conversions.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">UI/UX</span>
@@ -420,9 +429,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Web Development</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Fast, secure, and responsive websites built to perform and convert.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Fast, secure, and responsive websites built to
+                                    perform and convert.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Web</span>
@@ -439,9 +447,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">App Development</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Scalable mobile apps with modern UI and clean architecture.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Scalable mobile apps with modern UI and clean
+                                    architecture.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">App</span>
@@ -458,9 +465,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">AI Automation</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Automations that save time: leads, reporting, reminders, workflows, integrations.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Automations that save time: leads, reporting,
+                                    reminders, workflows, integrations.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">AI</span>
@@ -477,9 +483,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Social Media Management</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Strategy + content + design + posting to keep your brand consistent and growing.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Strategy + content + design + posting to keep your
+                                    brand consistent and growing.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Social</span>
@@ -496,9 +501,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Cyber Security</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Practical security services to protect websites, systems, and business data.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Practical security services to protect websites,
+                                    systems, and business data.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Security</span>
@@ -515,9 +519,8 @@
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">More IT Solutions</div>
-                                <p class="mt-2 text-sm text-white/65">
-                                    Need something custom? We also handle IT support, setup, hosting, and maintenance.
-                                </p>
+                                <p class="mt-2 text-sm text-white/65">Need something custom? We also handle IT support,
+                                    setup, hosting, and maintenance.</p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">IT</span>
@@ -531,15 +534,15 @@
                     </div>
                 </div>
 
-                <!-- Bottom CTA -->
                 <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                     <a href="#contact"
-                        class="rounded-xl bg-purple px-6 py-3 text-sm font-medium text-white shadow-[0_0_40px_rgba(168,85,247,0.25)] hover:opacity-90">
+                        class="rounded-xl bg-purple px-6 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
                         Get a Free Consultation ↗
                     </a>
-                    <a href="#pricing"
+                    <!-- If you don't have pricing section active, keep this as scroll to services -->
+                    <a href="#services"
                         class="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/80 hover:bg-white/10">
-                        View Pricing ↗
+                        View Services ↗
                     </a>
                 </div>
             </section>
@@ -581,7 +584,6 @@
                 </div>
             </section>
 
-
             <!-- BENEFITS -->
             <section class="py-14 sm:py-16" id="benefits">
                 <div class="text-center">
@@ -600,8 +602,7 @@
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-panel p-6">
                         <div class="text-sm font-semibold">Faster Delivery</div>
-                        <p class="mt-2 text-sm text-muted">Clear milestones, quick turnaround.
-                        </p>
+                        <p class="mt-2 text-sm text-muted">Clear milestones, quick turnaround.</p>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-panel p-6">
                         <div class="text-sm font-semibold">Better Brand Presence</div>
@@ -622,122 +623,6 @@
                 </div>
             </section>
 
-
-
-            <!-- <section id="pricing" class="py-14 sm:py-16">
-                <div class="text-center">
-                    <div
-                        class="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-                        Pricing</div>
-                    <h2 class="mt-4 text-3xl font-bold sm:text-5xl text-ink">The Best Plans,<br
-                            class="hidden sm:block" /> at the Right Price</h2>
-                    <p class="mt-3 text-muted">Choose a plan that fits your business needs.</p>
-
-               
-                 <div
-                        class="mt-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">
-                        <span>Monthly</span>
-                        <button id="billingToggle"
-                            class="relative h-6 w-11 rounded-full bg-white/10 ring-1 ring-white/10">
-                            <span id="billingKnob"
-                                class="absolute left-1 top-1 h-4 w-4 rounded-full bg-purple transition-all"></span>
-                        </button>
-                        <span>Annually</span>
-                    </div>
-                </div>
-
-                <div class="mt-12 grid gap-6 lg:grid-cols-3">
-                    <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-sm font-semibold">Starter</div>
-                        <div class="mt-2 text-3xl font-bold"><span class="price" data-month="37"
-                                data-year="29">37</span><span class="text-sm text-white/60">/mo</span></div>
-                        <p class="mt-2 text-sm text-muted">Perfect for small businesses starting.</p>
-                        <button
-                            class="mt-5 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10">Choose
-                            this plan</button>
-                        <div class="mt-5 text-xs text-white/60">What’s included:</div>
-                        <ul class="mt-3 space-y-2 text-sm text-white/80">
-                            <li>✓ Basic workflow automation</li>
-                            <li>✓ AI assistant starter</li>
-                            <li>✓ Standard analytics</li>
-                        </ul>
-                    </div>
-
-           <div class="rounded-3xl border border-purple/40 bg-panel p-6 shadow-glow">
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm font-semibold">Professional</div>
-                            <span class="rounded-full bg-purple/25 px-3 py-1 text-[11px]">Popular</span>
-                        </div>
-                        <div class="mt-2 text-3xl font-bold"><span class="price" data-month="75"
-                                data-year="59">75</span><span class="text-sm text-white/60">/mo</span></div>
-                        <p class="mt-2 text-sm text-muted">For teams that want growth automation.</p>
-                        <button
-                            class="mt-5 w-full rounded-xl bg-purple px-4 py-3 text-sm font-medium text-white hover:opacity-90">Choose
-                            this plan</button>
-                        <div class="mt-5 text-xs text-white/60">What’s included:</div>
-                        <ul class="mt-3 space-y-2 text-sm text-white/80">
-                            <li>✓ Advanced automation</li>
-                            <li>✓ AI + marketing tools</li>
-                            <li>✓ Enhanced analytics</li>
-                        </ul>
-                    </div>
-                  <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-sm font-semibold">Enterprise</div>
-                        <div class="mt-2 text-3xl font-bold">Custom</div>
-                        <p class="mt-2 text-sm text-muted">For businesses needing tailored solutions.</p>
-                        <button
-                            class="mt-5 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10">Schedule
-                            a call</button>
-                        <div class="mt-5 text-xs text-white/60">What’s included:</div>
-                        <ul class="mt-3 space-y-2 text-sm text-white/80">
-                            <li>✓ Fully customizable automation</li>
-                            <li>✓ Dedicated consultant</li>
-                            <li>✓ Enterprise-grade support</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            -->
-
-
-            <!-- TESTIMONIALS -->
-            <!-- <section class="py-14 sm:py-16">
-                <div class="text-center">
-                    <div
-                        class="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-                        Testimonials</div>
-                    <h2 class="mt-4 text-3xl font-bold sm:text-5xl text-ink">Why Businesses Love<br
-                            class="hidden sm:block" /> Our Solutions</h2>
-                    <p class="mt-3 text-muted">Real businesses, real results.</p>
-                </div>
-
-                <div class="mt-12 grid gap-6 sm:grid-cols-2">
-                    <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-white/70">★★★★★</div>
-                        <p class="mt-3 text-sm text-white/80">“Automation transformed operations by eliminating
-                            repetitive tasks.”</p>
-                        <div class="mt-4 text-xs text-white/60">— James Carter, CEO</div>
-                    </div>
-                    <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-white/70">★★★★★</div>
-                        <p class="mt-3 text-sm text-white/80">“Our response time improved drastically and customer
-                            satisfaction increased.”</p>
-                        <div class="mt-4 text-xs text-white/60">— Emily Wong, Support Lead</div>
-                    </div>
-                    <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-white/70">★★★★★</div>
-                        <p class="mt-3 text-sm text-white/80">“We now engage leads at the right time with smarter,
-                            data-backed decisions.”</p>
-                        <div class="mt-4 text-xs text-white/60">— David Reynolds, Growth</div>
-                    </div>
-                    <div class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-white/70">★★★★★</div>
-                        <p class="mt-3 text-sm text-white/80">“Clear process, premium UI, and support after launch.”</p>
-                        <div class="mt-4 text-xs text-white/60">— Sophia Martinez, Ops</div>
-                    </div>
-                </div>
-            </section>
--->
             <!-- FAQ -->
             <section class="py-14 sm:py-16">
                 <div class="text-center">
@@ -750,53 +635,59 @@
                 </div>
 
                 <div class="mx-auto mt-10 max-w-3xl space-y-3">
-                    <!-- accordion item -->
-                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4">
+                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
+                        aria-expanded="false" aria-controls="faq-1">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">What services do you provide?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div class="faqBody hidden pt-3 text-sm text-muted">
+                        <div id="faq-1" class="faqBody hidden pt-3 text-sm text-muted">
                             Graphic design, video editing, UI/UX, web & app development, AI automation, social media
                             management, cyber security, and IT solutions.
                         </div>
                     </button>
 
-                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4">
+                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
+                        aria-expanded="false" aria-controls="faq-2">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">How long does delivery take?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div class="faqBody hidden pt-3 text-sm text-muted">
+                        <div id="faq-2" class="faqBody hidden pt-3 text-sm text-muted">
                             Depends on scope—small tasks 1–3 days, apps and automation longer.
                         </div>
                     </button>
 
-                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4">
+                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
+                        aria-expanded="false" aria-controls="faq-3">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">Do you provide support after delivery?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div class="faqBody hidden pt-3 text-sm text-muted">
+                        <div id="faq-3" class="faqBody hidden pt-3 text-sm text-muted">
                             Yes, we offer maintenance and monthly support plans.
                         </div>
                     </button>
-                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4">
+
+                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
+                        aria-expanded="false" aria-controls="faq-4">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">Can you handle everything (design + dev +
                                 marketing)?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div class="faqBody hidden pt-3 text-sm text-muted">
+                        <div id="faq-4" class="faqBody hidden pt-3 text-sm text-muted">
                             Yes. We can deliver end-to-end execution.
                         </div>
                     </button>
-                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4">
+
+                    <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
+                        aria-expanded="false" aria-controls="faq-5">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">How do we start?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div class="faqBody hidden pt-3 text-sm text-muted">
+                        <div id="faq-5" class="faqBody hidden pt-3 text-sm text-muted">
                             Send requirements on WhatsApp/email, and we’ll share a plan + timeline + cost.
                         </div>
                     </button>
@@ -815,37 +706,6 @@
                     </a>
                 </div>
             </section>
-            <!-- 
-            <section id="blog" class="py-14 sm:py-16">
-                <div class="text-center">
-                    <div
-                        class="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-                        Blog</div>
-                    <h2 class="mt-4 text-3xl font-bold sm:text-5xl text-ink">Insights & Updates</h2>
-                    <p class="mt-3 text-muted">Short posts about design, automation, and growth.</p>
-                </div>
-
-                <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <article class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-xs text-white/60">Automation</div>
-                        <h3 class="mt-2 font-semibold text-ink">Top 5 workflows every business should automate</h3>
-                        <p class="mt-2 text-sm text-muted">Lead capture, reporting, reminders, approvals, and content
-                            scheduling.</p>
-                    </article>
-                    <article class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-xs text-white/60">Web</div>
-                        <h3 class="mt-2 font-semibold text-ink">What makes a website “premium” in 2026?</h3>
-                        <p class="mt-2 text-sm text-muted">Speed, typography, spacing, responsive UI, and clear
-                            conversion paths.</p>
-                    </article>
-                    <article class="rounded-3xl border border-white/10 bg-panel p-6">
-                        <div class="text-xs text-white/60">Design</div>
-                        <h3 class="mt-2 font-semibold text-ink">Dark UI: how to keep it readable and clean</h3>
-                        <p class="mt-2 text-sm text-muted">Contrast, subtle borders, glass cards, and controlled glow
-                            accents.</p>
-                    </article>
-                </div>
-            </section> -->
 
             <!-- CONTACT + FOOTER -->
             <section id="contact" class="py-14 sm:py-16">
@@ -869,136 +729,73 @@
                                     href="https://wa.me/9779814364850">
                                     WhatsApp ↗
                                 </a>
-
                             </div>
                         </div>
 
-                       <!-- CONTACT FORM (Formspree) -->
-<form
-  action="https://formspree.io/f/xdaloelj"
-  method="POST"
-  class="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
->
-  <!-- Name  -->
-   <div>
-    <label class="block text-sm font-medium text-white/80 mb-1">
-      Your Name
-    </label>
-    <input
-      type="text"
-      name="name"
-      required
-      placeholder="Full Name"
-      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"
-    />
-  </div>
+                        <!-- CONTACT FORM (Formspree) -->
+                        <form action="https://formspree.io/f/xdaloelj" method="POST"
+                            class="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-1">Your Name</label>
+                                <input type="text" name="name" required placeholder="Full Name"
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple" />
+                            </div>
 
-  <!-- Email -->
-  <div>
-    <label class="block text-sm font-medium text-white/80 mb-1">
-      Your Email
-    </label>
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="you@example.com"
-      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"
-    />
-  </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-1">Your Email</label>
+                                <input type="email" name="email" required placeholder="you@example.com"
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple" />
+                            </div>
 
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-1">Your Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="9814364850"
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple" />
+                            </div>
 
-  <!-- Phone -->
-  <div>
-    <label class="block text-sm font-medium text-white/80 mb-1">
-      Your Phone Number
-    </label>
-    <input
-      type="tel"
-      id="phone"
-      name="phone"
-      required
-      placeholder="9814364850"
-      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"
-    />
-  </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <label class="block text-sm font-medium text-white/80">Your WhatsApp Number</label>
+                                    <label class="flex items-center gap-2 text-xs text-white/50 cursor-pointer">
+                                        <input type="checkbox" class="rounded border-white/10 bg-white/5"
+                                            onchange="if(this.checked) document.getElementById('whatsapp').value = document.getElementById('phone').value" />
+                                        Same as phone
+                                    </label>
+                                </div>
+                                <input type="tel" id="whatsapp" name="whatsapp" required placeholder="9814364850"
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple" />
+                            </div>
 
-  <!-- WhatsApp -->
-  <div>
-    <div class="flex items-center justify-between mb-1">
-      <label class="block text-sm font-medium text-white/80">
-        Your WhatsApp Number
-      </label>
-      <label class="flex items-center gap-2 text-xs text-white/50 cursor-pointer">
-        <input
-          type="checkbox"
-          class="rounded border-white/10 bg-white/5"
-          onchange="if(this.checked) document.getElementById('whatsapp').value = document.getElementById('phone').value"
-        />
-        Same as phone
-      </label>
-    </div>
-    <input
-      type="tel"
-      id="whatsapp"
-      name="whatsapp"
-      required
-      placeholder="9814364850"
-      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"
-    />
-  </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-1">Service Needed</label>
+                                <select name="service" required
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-purple">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option>Graphic Design</option>
+                                    <option>Video Editing</option>
+                                    <option>UI/UX Design</option>
+                                    <option>Web Development</option>
+                                    <option>App Development</option>
+                                    <option>AI Automation</option>
+                                    <option>Social Media Management</option>
+                                    <option>Cyber Security</option>
+                                    <option>Other IT Solution</option>
+                                </select>
+                            </div>
 
-  <!-- Service -->
-  <div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-1">Your Message</label>
+                                <textarea name="message" rows="4" required placeholder="Tell us about your project..."
+                                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"></textarea>
+                            </div>
 
-    <label class="block text-sm font-medium text-white/80 mb-1">
-      Service Needed
-    </label>
-    <select
-      name="service"
-      class="w-full rounded-xl border border-white/10 bg-slate-600 px-4 py-3 text-sm text-white outline-none focus:border-purple"
-    >
-      <option value="" disabled selected>Select a service</option>
-      <option>Graphic Design</option>
-      <option>Video Editing</option>
-      <option>UI/UX Design</option>
-      <option>Web Development</option>
-      <option>App Development</option>
-      <option>AI Automation</option>
-      <option>Social Media Management</option>
-      <option>Cyber Security</option>
-      <option>Other IT Solution</option>
-    </select>
-  </div>
+                            <button type="submit"
+                                class="w-full rounded-xl bg-purple px-6 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90 transition">
+                                Send Message ↗
+                            </button>
 
-  <!-- Message -->
-  <div>
-    <label class="block text-sm font-medium text-white/80 mb-1">
-      Your Message
-    </label>
-    <textarea
-      name="message"
-      rows="4"
-      required
-      placeholder="Tell us about your project..."
-      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-purple"
-    ></textarea>
-  </div>
-
-  <!-- Submit -->
-  <button
-    type="submit"
-    class="w-full rounded-xl bg-purple px-6 py-3 text-sm font-medium text-white shadow-[0_0_40px_rgba(168,85,247,0.25)] hover:opacity-90 transition"
-  >
-    Send Message ↗
-  </button>
-
-  <!-- Footer note -->
-  <p class="text-xs text-white/45 text-center">
-    We usually reply within 24 hours.
-  </p>
-</form>
-
+                            <p class="text-xs text-white/45 text-center">We usually reply within 24 hours.</p>
+                        </form>
                     </div>
                 </div>
 
@@ -1010,67 +807,51 @@
                             <p class="mt-4 text-xs text-white/50">© <span id="year"></span> Waras Infotech. All rights
                                 reserved.</p>
                         </div>
-
-                        <!-- <div class="grid gap-8 sm:grid-cols-3">
-                            <div>
-                                <div class="text-sm font-semibold text-white/85">Links</div>
-                                <div class="mt-3 space-y-2 text-sm text-white/70">
-                                    <a class="block hover:text-white" href="#services">Services</a>
-                                    <a class="block hover:text-white" href="#pricing">Pricing</a>
-                                    <a class="block hover:text-white" href="#blog">Blog</a>
-                                </div>
-                            </div> -->
-                        <!-- <div>
-                                <div class="text-sm font-semibold text-white/85">Pages</div>
-                                <div class="mt-3 space-y-2 text-sm text-white/70">
-                                    <a class="block hover:text-white" href="#home">Home</a>
-                                    <a class="block hover:text-white" href="#about">About</a>
-                                    <a class="block hover:text-white" href="#contact">Contact</a>
-                                </div>
-                            </div> -->
-
-
-
                     </div>
+                </footer>
+            </section>
+        </main>
     </div>
-    </footer>
-    </section>
-    </main>
-    </div>
+
+    <!-- Floating WhatsApp CTA (high conversion) -->
+    <a href="https://wa.me/9779814364850"
+        class="fixed bottom-5 right-5 z-50 rounded-full bg-purple px-5 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
+        WhatsApp ↗
+    </a>
 
     <script>
         // Mobile menu
         const btn = document.getElementById("menuBtn");
         const menu = document.getElementById("mobileMenu");
-        if (btn && menu) btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+        if (btn && menu) {
+            btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+        }
 
         // Year
-        document.getElementById("year").textContent = new Date().getFullYear();
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // Pricing toggle (monthly <-> annually)
-        const toggle = document.getElementById("billingToggle");
-        const knob = document.getElementById("billingKnob");
-        const prices = document.querySelectorAll(".price");
-        let annually = false;
+        // FAQ accordion (with aria-expanded)
+        document.querySelectorAll(".faq").forEach((faqBtn) => {
+            faqBtn.addEventListener("click", () => {
+                const body = faqBtn.querySelector(".faqBody");
+                const isOpen = body && !body.classList.contains("hidden");
 
-        function renderPrices() {
-            prices.forEach(p => {
-                const m = p.getAttribute("data-month");
-                const y = p.getAttribute("data-year");
-                p.textContent = annually ? y : m;
-            });
-            knob.style.left = annually ? "1.6rem" : "0.25rem";
-        }
-        if (toggle) toggle.addEventListener("click", () => { annually = !annually; renderPrices(); });
-        renderPrices();
+                // close all
+                document.querySelectorAll(".faq").forEach((b) => {
+                    const bb = b.querySelector(".faqBody");
+                    if (bb) bb.classList.add("hidden");
+                    b.setAttribute("aria-expanded", "false");
+                });
 
-        // FAQ accordion
-        document.querySelectorAll(".faq").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const body = btn.querySelector(".faqBody");
-                const isOpen = !body.classList.contains("hidden");
-                document.querySelectorAll(".faqBody").forEach(b => b.classList.add("hidden"));
-                if (!isOpen) body.classList.remove("hidden");
+                // open clicked
+                if (body && isOpen) {
+                    body.classList.add("hidden");
+                    faqBtn.setAttribute("aria-expanded", "false");
+                } else if (body) {
+                    body.classList.remove("hidden");
+                    faqBtn.setAttribute("aria-expanded", "true");
+                }
             });
         });
     </script>
