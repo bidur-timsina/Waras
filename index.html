@@ -20,6 +20,7 @@
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -76,12 +77,27 @@
             outline: 2px solid rgba(168, 85, 247, .55);
             outline-offset: 3px;
         }
+
+        /* Click-to-reveal CTA for service cards */
+        .svc-cta {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(6px);
+            overflow: hidden;
+            transition: max-height .25s ease, opacity .25s ease, transform .25s ease;
+        }
+
+        .service-card.is-open .svc-cta {
+            max-height: 120px;
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
-<body class="bg-bg text-white antialiased overflow-x-hidden overflow-x-clip">
-    <div class="relative min-h-screen stars grain">
-        <!-- Glow blobs -->
+<body class="bg-bg text-white antialiased overflow-x-hidden">
+    <div class="relative min-h-screen stars grain overflow-x-clip">
+        <!-- Glow blobs (safe with overflow clip) -->
         <div
             class="pointer-events-none absolute -top-44 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-violet/35 blur-[95px]">
         </div>
@@ -182,7 +198,6 @@
                 <div class="mt-14">
                     <p class="text-center text-xs text-faint">Over 10+ businesses trust us</p>
                     <div class="mt-6 grid grid-cols-2 gap-4 opacity-70 sm:grid-cols-3 lg:grid-cols-6 justify-center">
-                        <!-- Tip: set width/height to reduce layout shift -->
                         <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 grid place-items-center">
                             <img src="gurumantra.png" alt="Gurumantra" width="140" height="40"
                                 class="h-10 w-auto object-contain" loading="lazy" decoding="async" />
@@ -261,8 +276,8 @@
                         <h3 class="mt-4 text-3xl font-bold text-ink">Automate repetitive tasks</h3>
                         <p class="mt-3 text-muted">
                             We build smart automation systems for lead handling, reporting, reminders, content
-                            workflows, and internal operations—
-                            saving time and reducing errors.
+                            workflows, and internal
+                            operations—saving time and reducing errors.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2">
                             <span
@@ -289,7 +304,8 @@
                         <h3 class="mt-4 text-3xl font-bold text-ink">Design & build high-converting products</h3>
                         <p class="mt-3 text-muted">
                             We craft clean UI/UX and turn it into fast websites and apps—optimized for performance,
-                            responsiveness, and conversions.
+                            responsiveness, and
+                            conversions.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2">
                             <span
@@ -344,7 +360,8 @@
                         <h3 class="mt-4 text-3xl font-bold text-ink">Build a strong brand presence</h3>
                         <p class="mt-3 text-muted">
                             We manage social media with strategy, content planning, designs, reels, captions, and
-                            posting—so your brand stays consistent and grows.
+                            posting—so your brand
+                            stays consistent and grows.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2">
                             <span
@@ -356,7 +373,7 @@
                 </div>
             </section>
 
-            <!-- ALL SERVICES (renamed id to avoid duplicate) -->
+            <!-- ALL SERVICES (with click-to-reveal buttons) -->
             <section id="all-services" class="py-14 sm:py-16">
                 <div class="text-center">
                     <h2 class="text-3xl font-bold sm:text-5xl text-white/90">
@@ -365,18 +382,23 @@
                     </h2>
                     <p class="mt-3 text-white/65 max-w-3xl mx-auto">
                         From creative design to advanced automation and security, Waras Infotech delivers end-to-end
-                        solutions that help businesses grow smarter, faster, and safer.
+                        solutions that
+                        help businesses grow smarter, faster, and safer.
                     </p>
                 </div>
 
                 <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <!-- Card -->
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Graphic Design</div>
-                                <p class="mt-2 text-sm text-white/65">Branding and creatives that make your business
-                                    look premium and consistent everywhere.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Branding and creatives that make your business look premium and consistent
+                                    everywhere.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Design</span>
@@ -387,14 +409,29 @@
                             <li>• Social Media Creatives</li>
                             <li>• Business Profiles & Thumbnails</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Designs
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Graphic Design">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 2 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Video Editing</div>
-                                <p class="mt-2 text-sm text-white/65">Scroll-stopping edits for Reels, ads, and
-                                    YouTube—clean, modern, engaging.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Scroll-stopping edits for Reels, ads, and YouTube—clean, modern, engaging.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Video</span>
@@ -405,14 +442,29 @@
                             <li>• YouTube Editing</li>
                             <li>• Motion Graphics Basics</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Edits
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Video Editing">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 3 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">UI/UX Design</div>
-                                <p class="mt-2 text-sm text-white/65">User-centric interfaces designed for usability,
-                                    clarity, and conversions.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    User-centric interfaces designed for usability, clarity, and conversions.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">UI/UX</span>
@@ -423,14 +475,29 @@
                             <li>• Dashboard & System UI</li>
                             <li>• Figma Prototypes & Wireframes</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Designs
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="UI/UX Design">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 4 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Web Development</div>
-                                <p class="mt-2 text-sm text-white/65">Fast, secure, and responsive websites built to
-                                    perform and convert.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Fast, secure, and responsive websites built to perform and convert.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Web</span>
@@ -441,14 +508,29 @@
                             <li>• SEO & Speed Optimization</li>
                             <li>• Maintenance & Updates</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Services
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Web Development">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 5 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">App Development</div>
-                                <p class="mt-2 text-sm text-white/65">Scalable mobile apps with modern UI and clean
-                                    architecture.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Scalable mobile apps with modern UI and clean architecture.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">App</span>
@@ -459,14 +541,29 @@
                             <li>• UI + Backend Integration</li>
                             <li>• Testing & Deployment Support</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Services
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="App Development">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 6 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">AI Automation</div>
-                                <p class="mt-2 text-sm text-white/65">Automations that save time: leads, reporting,
-                                    reminders, workflows, integrations.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Automations that save time: leads, reporting, reminders, workflows, integrations.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">AI</span>
@@ -477,14 +574,29 @@
                             <li>• Workflow Bots</li>
                             <li>• Tool Integrations</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Services
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="AI Automation">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 7 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Social Media Management</div>
-                                <p class="mt-2 text-sm text-white/65">Strategy + content + design + posting to keep your
-                                    brand consistent and growing.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Strategy + content + design + posting to keep your brand consistent and growing.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Social</span>
@@ -495,14 +607,29 @@
                             <li>• Reels / Short Content</li>
                             <li>• Engagement Support</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Services
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Social Media Management">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 8 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">Cyber Security</div>
-                                <p class="mt-2 text-sm text-white/65">Practical security services to protect websites,
-                                    systems, and business data.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Practical security services to protect websites, systems, and business data.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">Security</span>
@@ -513,14 +640,29 @@
                             <li>• Malware Checks</li>
                             <li>• Security Best Practices</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Services
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Cyber Security">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <!-- Card 9 -->
+                    <div
+                        class="service-card rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition cursor-pointer">
                         <div class="flex items-start justify-between">
                             <div>
                                 <div class="text-sm font-semibold text-white/90">More IT Solutions</div>
-                                <p class="mt-2 text-sm text-white/65">Need something custom? We also handle IT support,
-                                    setup, hosting, and maintenance.</p>
+                                <p class="mt-2 text-sm text-white/65">
+                                    Need something custom? We also handle IT support, setup, hosting, and maintenance.
+                                </p>
                             </div>
                             <span
                                 class="rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">IT</span>
@@ -531,7 +673,20 @@
                             <li>• IT Support & Maintenance</li>
                             <li>• Custom Requests</li>
                         </ul>
+
+                        <div class="svc-cta mt-5 flex flex-wrap items-center gap-3">
+                            <a href="#portfolio"
+                                class="rounded-xl border-2 border-white/60 bg-transparent px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10">
+                                See Designs
+                            </a>
+                            <button type="button"
+                                class="rounded-xl bg-purple px-4 py-2 text-sm font-medium text-white shadow-glow hover:opacity-90"
+                                data-order data-service="Other IT Solution">
+                                Order Service
+                            </button>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -539,7 +694,6 @@
                         class="rounded-xl bg-purple px-6 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
                         Get a Free Consultation ↗
                     </a>
-                    <!-- If you don't have pricing section active, keep this as scroll to services -->
                     <a href="#services"
                         class="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/80 hover:bg-white/10">
                         View Services ↗
@@ -636,58 +790,59 @@
 
                 <div class="mx-auto mt-10 max-w-3xl space-y-3">
                     <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
-                        aria-expanded="false" aria-controls="faq-1">
+                        aria-expanded="false">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">What services do you provide?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div id="faq-1" class="faqBody hidden pt-3 text-sm text-muted">
+                        <div class="faqBody hidden pt-3 text-sm text-muted">
                             Graphic design, video editing, UI/UX, web & app development, AI automation, social media
-                            management, cyber security, and IT solutions.
+                            management, cyber
+                            security, and IT solutions.
                         </div>
                     </button>
 
                     <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
-                        aria-expanded="false" aria-controls="faq-2">
+                        aria-expanded="false">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">How long does delivery take?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div id="faq-2" class="faqBody hidden pt-3 text-sm text-muted">
+                        <div class="faqBody hidden pt-3 text-sm text-muted">
                             Depends on scope—small tasks 1–3 days, apps and automation longer.
                         </div>
                     </button>
 
                     <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
-                        aria-expanded="false" aria-controls="faq-3">
+                        aria-expanded="false">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">Do you provide support after delivery?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div id="faq-3" class="faqBody hidden pt-3 text-sm text-muted">
+                        <div class="faqBody hidden pt-3 text-sm text-muted">
                             Yes, we offer maintenance and monthly support plans.
                         </div>
                     </button>
 
                     <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
-                        aria-expanded="false" aria-controls="faq-4">
+                        aria-expanded="false">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">Can you handle everything (design + dev +
                                 marketing)?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div id="faq-4" class="faqBody hidden pt-3 text-sm text-muted">
+                        <div class="faqBody hidden pt-3 text-sm text-muted">
                             Yes. We can deliver end-to-end execution.
                         </div>
                     </button>
 
                     <button class="faq w-full text-left rounded-2xl border border-white/10 bg-panel px-5 py-4"
-                        aria-expanded="false" aria-controls="faq-5">
+                        aria-expanded="false">
                         <div class="flex items-center justify-between gap-4">
                             <span class="font-medium text-white/90">How do we start?</span>
                             <span class="text-white/60">▾</span>
                         </div>
-                        <div id="faq-5" class="faqBody hidden pt-3 text-sm text-muted">
+                        <div class="faqBody hidden pt-3 text-sm text-muted">
                             Send requirements on WhatsApp/email, and we’ll share a plan + timeline + cost.
                         </div>
                     </button>
@@ -813,7 +968,7 @@
         </main>
     </div>
 
-    <!-- Floating WhatsApp CTA (high conversion) -->
+    <!-- Floating WhatsApp CTA -->
     <a href="https://wa.me/9779814364850"
         class="fixed bottom-5 right-5 z-50 rounded-full bg-purple px-5 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
         WhatsApp ↗
@@ -823,28 +978,24 @@
         // Mobile menu
         const btn = document.getElementById("menuBtn");
         const menu = document.getElementById("mobileMenu");
-        if (btn && menu) {
-            btn.addEventListener("click", () => menu.classList.toggle("hidden"));
-        }
+        if (btn && menu) btn.addEventListener("click", () => menu.classList.toggle("hidden"));
 
         // Year
         const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // FAQ accordion (with aria-expanded)
+        // FAQ accordion
         document.querySelectorAll(".faq").forEach((faqBtn) => {
             faqBtn.addEventListener("click", () => {
                 const body = faqBtn.querySelector(".faqBody");
                 const isOpen = body && !body.classList.contains("hidden");
 
-                // close all
                 document.querySelectorAll(".faq").forEach((b) => {
                     const bb = b.querySelector(".faqBody");
                     if (bb) bb.classList.add("hidden");
                     b.setAttribute("aria-expanded", "false");
                 });
 
-                // open clicked
                 if (body && isOpen) {
                     body.classList.add("hidden");
                     faqBtn.setAttribute("aria-expanded", "false");
@@ -852,6 +1003,35 @@
                     body.classList.remove("hidden");
                     faqBtn.setAttribute("aria-expanded", "true");
                 }
+            });
+        });
+
+        // Service cards: 1st click open, 2nd click close, clicking other closes previous
+        const serviceCards = document.querySelectorAll("#all-services .service-card");
+        serviceCards.forEach((card) => {
+            card.addEventListener("click", (e) => {
+                // don't toggle when clicking action buttons/links
+                if (e.target.closest("a,button,input,select,textarea")) return;
+
+                const wasOpen = card.classList.contains("is-open");
+                serviceCards.forEach((c) => c.classList.remove("is-open"));
+                if (!wasOpen) card.classList.add("is-open");
+            });
+        });
+
+        // Order Service: auto-select service in contact form and scroll
+        document.querySelectorAll("[data-order]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const serviceName = btn.getAttribute("data-service");
+                const select = document.querySelector('select[name="service"]');
+
+                if (select && serviceName) {
+                    const option = Array.from(select.options).find(o => o.text.trim() === serviceName.trim());
+                    if (option) select.value = option.value || option.text;
+                }
+
+                const contact = document.getElementById("contact");
+                if (contact) contact.scrollIntoView({ behavior: "smooth", block: "start" });
             });
         });
     </script>
