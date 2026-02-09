@@ -109,7 +109,7 @@
         </div>
 
         <!-- Navbar -->
-        <header class="sticky top-0 z-40 border-b border-white/10 bg-bg/60 backdrop-blur">
+        <header class="sticky top-0 z-50 border-b border-white/10 bg-bg/60 backdrop-blur">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 <a href="#home" class="flex items-center gap-2">
                     <div
@@ -134,29 +134,10 @@
                     </a>
                 </nav>
 
-                <button id="menuBtn" aria-label="Open menu"
-                    class="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2 text-white/80 md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+
             </div>
 
-            <!-- Mobile menu -->
-            <div id="mobileMenu" class="hidden border-t border-white/10 bg-bg/80 px-4 py-4 backdrop-blur md:hidden">
-                <div class="mx-auto flex max-w-7xl flex-col gap-2 text-sm text-white/80">
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#home">Home</a>
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#services">Services</a>
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#benefits">Benefits</a>
-                    <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
-                    <a class="mt-2 rounded-xl bg-purple px-4 py-3 text-center font-medium text-white shadow-glow hover:opacity-90"
-                        href="#contact">
-                        Book a call
-                    </a>
-                </div>
-            </div>
+
         </header>
 
         <main id="home" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -970,7 +951,7 @@
 
     <!-- Floating WhatsApp CTA -->
     <a href="https://wa.me/9779814364850"
-        class="fixed bottom-5 right-5 z-50 rounded-full bg-purple px-5 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
+        class="fixed bottom-20 right-5 z-50 rounded-full bg-purple px-5 py-3 text-sm font-medium text-white shadow-glow hover:opacity-90">
         WhatsApp ↗
     </a>
 
@@ -1036,5 +1017,50 @@
         });
     </script>
 </body>
+<!-- Mobile Bottom Navigation (ONLY mobile) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-bg/90 backdrop-blur-md md:hidden">
+    <div class="grid grid-cols-4 text-xs text-white/70">
+
+        <a href="#home" class="flex flex-col items-center justify-center gap-1 py-3 hover:text-white">
+            <span>🏠</span>
+            <span>Home</span>
+        </a>
+
+        <a href="#services" class="flex flex-col items-center justify-center gap-1 py-3 hover:text-white">
+            <span>🛠️</span>
+            <span>Services</span>
+        </a>
+
+        <a href="#benefits" class="flex flex-col items-center justify-center gap-1 py-3 hover:text-white">
+            <span>🎁</span>
+            <span>Benefits</span>
+        </a>
+
+        <a href="#contact" class="flex flex-col items-center justify-center gap-1 py-3 text-purple font-medium">
+            <span>📞</span>
+            <span>Contact</span>
+        </a>
+
+    </div>
+</nav>
+<script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const top = section.offsetTop - 120;
+            if (scrollY >= top) current = section.id;
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("text-purple", "font-medium");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("text-purple", "font-medium");
+            }
+        });
+    });
+</script>
 
 </html>
